@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 // 公用组件
-import SlidePage from 'base/slide-page/index.jsx'
+import { SlidePage } from 'base/slide-page/index.jsx'
 import Top from 'base/top-header/index.jsx'
 
 class TakeOutSeach extends Component {
@@ -26,7 +26,7 @@ class TakeOutSeach extends Component {
     return (
       <SlidePage type={ this._SlidePage } className="TakeOutSeach">
         <Top type={ this._Top }></Top>
-        <p>Hello World!</p>
+        <p className="content">Hello World!</p>
       </SlidePage>
     )
   }

@@ -15,7 +15,7 @@ class My extends Component {
             }
         })
         this.props.type.itemSelect = 'food'
-        this.props.router.push('/login')
+        this.props.history.push('/login')
       }
     }
   }

@@ -15,15 +15,18 @@ class Scroll extends Component {
     this.state = props.type[this.key]
   }
   /**
+   * @param { String } id 'takeOut-det'
    * @param { Boolean } scrollX false
    * @param { Boolean } scrollY  true
    * @param { Boolean } click  '首页'
+   * ......
    * http://ustbhuangyi.github.io/better-scroll/doc/zh-hans/options.html
    */
   list () {
-    setTimeout(() => {
-      this.scroll = new BScroll($id(this.state.id), this.state)
-    }, 20)
+    // let dom = $id(this.state.id)
+    // dom && setTimeout(() => {
+    //   this.scroll = new BScroll($id(this.state.id), this.state)
+    // }, 20)
     return (
       <section id={ this.state.id }>
         <ul>
@@ -33,15 +36,18 @@ class Scroll extends Component {
     )
   }
   /**
+   * @param { String } id 'takeOut-det'
    * @param { Boolean } scrollX false
    * @param { Boolean } scrollY  true
    * @param { Boolean } click  '首页'
+   * ......
    * http://ustbhuangyi.github.io/better-scroll/doc/zh-hans/options.html
    */
   normal () {
-    setTimeout(() => {
-      this.scroll = new BScroll($id(this.state.id), this.state)
-    }, 20)
+    // let dom = $id(this.state.id)
+    // dom && setTimeout(() => {
+    //   this.scroll = new BScroll($id(this.state.id), this.state)
+    // }, 20)
     return (
       <section id={ this.state.id }>
         <div>
@@ -52,6 +58,15 @@ class Scroll extends Component {
   }
   render () {
     return this[this.key] && this[this.key]()
+  }
+  componentDidMount () {
+    let dom = $id(this.state.id)
+    if (!dom) {
+      return false
+    }
+    setTimeout(() => {
+      this.scroll = new BScroll(dom, this.state)
+    }, 20)
   }
 }
 export default Scroll

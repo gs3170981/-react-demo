@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 
 // 公用组件
-import SlidePage from 'base/slide-page/index.jsx'
+import { SlidePage } from 'base/slide-page/index.jsx'
 import Top from 'base/top-header/index.jsx'
 import Scroll from 'base/better-scroll/index.jsx'
 
@@ -18,8 +18,7 @@ class TakeOutDet extends Component {
           icon: 'fa-angle-left',
           to: '/'
         },
-        title: props.routeParams.val,
-        right: {}
+        title: props.match.params.val
       }
     }
     this._Scroll = {

@@ -1,8 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Router, hashHistory } from 'react-router';
+// import { Router, hashHistory } from 'react-router';
 
-import routeConfig  from './router/route.js';
+// import routeConfig  from './router/route.js';
+
+import { HashRouter, Route } from 'react-router-dom'
 import 'api/config.js'
 
 import'antd/lib/notification/style/css' // 全局样式在index.less之前载入
@@ -14,7 +16,9 @@ import registerServiceWorker from './registerServiceWorker';
 
 // import { createStore, applyMiddleware } from 'redux'
 import 'store/index.js' // _STORE 为全局redux
-import { Provider } from 'react-redux'
+
+import App from 'components/index.jsx'
+// import { Provider } from 'react-redux'
 
 // window._STORE.dispatch({
 //     type: 'user',
@@ -36,8 +40,8 @@ import { Provider } from 'react-redux'
 // })
 
 ReactDOM.render(
-    <Provider store = { window._STORE }>
-        <Router routes={ routeConfig } history={ hashHistory } />
-    </Provider>,
+    <HashRouter>
+        <Route path="/" component={ App } />
+    </HashRouter>,
     document.getElementById('root'))
 registerServiceWorker();

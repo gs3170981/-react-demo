@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Input } from 'antd'
-import { Link } from "react-router"
+import { Link } from "react-router-dom"
 
 class Top extends Component {
   constructor (props) {
@@ -20,9 +20,9 @@ class Top extends Component {
   normal () {
     return (
       <header className="Top-normal">
-        <Link to={ this.state.left.to } className={ `left fa-fw fa ${ this.state.left.icon }` }></Link>
+        { this.state.left && <Link to={ this.state.left.to } className={ `left fa-fw fa ${ this.state.left.icon }` }></Link> }
         <p className={ `title` }>{ this.state.title }</p>
-        <Link to={ this.state.right.to } className={ `right fa-fw fa ${ this.state.right.icon }` }></Link>
+        { this.state.right && <Link to={ this.state.right.to } className={ `right fa-fw fa ${ this.state.right.icon }` }></Link> }
       </header>
     )
   }

@@ -1,10 +1,8 @@
 import React, { Component } from 'react'
-import { Link } from "react-router"
+import { Link } from "react-router-dom"
 
 import Top from 'base/top-header/index.jsx'
 import Scroll from 'base/better-scroll/index.jsx'
-
-// import { $Promise } from 'common/js/methods.js'
 
 class TakeOut extends Component {
   constructor (props) {
@@ -23,6 +21,10 @@ class TakeOut extends Component {
       'list': {
         id: 'takeOut-list',
         click: true
+      }
+    }
+    this._slidePage = {
+      'normal': {
       }
     }
   }
@@ -48,7 +50,6 @@ class TakeOut extends Component {
             ))
           }
         </Scroll>
-        { this.props.children }
       </div>
     )
   }

@@ -1,11 +1,11 @@
 import React, { Component } from 'react'
-import { withRouter } from'react-router'
+import { withRouter } from'react-router-dom'
 import { Input } from 'antd'
 
 import { $class } from 'common/js/methods.js';
 
 // 公用组件
-import SlidePage from 'base/slide-page/index.jsx'
+import { SlidePage } from 'base/slide-page/index.jsx'
 import Top from 'base/top-header/index.jsx'
 
 class Login extends Component {
@@ -43,7 +43,7 @@ class Login extends Component {
               type: 'user',
               param: loginInfo
           })
-          this.props.router.push('/')
+          this.props.history.push('/')
         })
       }
     }
