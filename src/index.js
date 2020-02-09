@@ -16,6 +16,7 @@ import registerServiceWorker from './registerServiceWorker';
 import 'store/index.js' // _STORE 为全局redux
 import { Provider } from 'react-redux'
 
+// test
 // window._STORE.dispatch({
 //     type: 'user',
 //     param: {
